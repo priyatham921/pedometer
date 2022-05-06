@@ -2,20 +2,20 @@ import paho.mqtt.client as mqtt
 import datetime
 import sys
 
-broker_address="192.168.96.26" 
+broker_address="192.168.105.26" 
 
 
 #recieve timestamp1 and publish timestamp2 in return 
 def onMessage(client, userdata, msg):
-    print("[+] Recieved timestamp1: ", msg.payload.decode())
     now = datetime.datetime.now().strftime("%H:%M:%S")
     client.publish("timestamp2",now)#publish
-    print("[+] Timestamp2 :", now, " published successfully")
+    print("[+] Recieved time: ", msg.payload.decode())
+    print("[+] Published time :", now, " published successfully")
 
 
 
 #create new instance
-client = mqtt.Client("pythonClient") 
+client = mqtt.Client("pythonClient2") 
 
 
 #connect to broker
