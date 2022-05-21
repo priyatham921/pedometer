@@ -24,11 +24,14 @@ else:
     print("[-] Could not connec to MQTT Broker!")
     sys.exit(-1)
 
+"""
 #publish timestamp1
 ts = datetime.datetime.now().strftime("%H:%M:%S")
 client.publish("timestamp1", ts)
 print("[+] Published time: ", ts)
 print("[+] timestamp1: ", time.time())
+
+"""
 
 
 #subscribe to topic - timestamp2 to recieve timestamp in return
